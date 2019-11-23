@@ -5,4 +5,8 @@
 @import 'variables';
 
 // Bootstrap
+$theme-colors: (
+    "orange": #ff2d20
+);
+
 @import '~bootstrap/scss/bootstrap';
