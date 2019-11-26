@@ -19,5 +19,7 @@ $ php artisan migrate
 
 $ php artisan storage:link
 
-$ php artisan serve
+$ php artisan serve (terminal 1)
+
+$ npm run watch (terminal 2)
 ```
