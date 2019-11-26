@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="d-flex justify-content-between ">
+                    <div class="d-flex justify-content-between flex-wrap">
                         <div class="form-group">
                             <select class="form-control">
                                 <option>2020</option>
