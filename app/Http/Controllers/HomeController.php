@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::where('id', auth()->user()->id)->first();
+        $transactions = Transaction::where('id', auth()->user()->id)->get();
 
         return view('home', compact('transactions'));
     }

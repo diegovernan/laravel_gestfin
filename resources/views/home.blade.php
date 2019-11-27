@@ -25,40 +25,40 @@
                         <div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active text-orange" id="jan-tab" data-toggle="tab" href="#jan" role="tab" aria-controls="home" aria-selected="true">Jan</a>
+                                    <a class="nav-link active text-primary" id="jan-tab" data-toggle="tab" href="#jan" role="tab" aria-controls="home" aria-selected="true">Jan</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="fev-tab" data-toggle="tab" href="#fev" role="tab" aria-controls="profile" aria-selected="false">Fev</a>
+                                    <a class="nav-link text-primary" id="fev-tab" data-toggle="tab" href="#fev" role="tab" aria-controls="profile" aria-selected="false">Fev</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="mar-tab" data-toggle="tab" href="#mar" role="tab" aria-controls="contact" aria-selected="false">Mar</a>
+                                    <a class="nav-link text-primary" id="mar-tab" data-toggle="tab" href="#mar" role="tab" aria-controls="contact" aria-selected="false">Mar</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="abr-tab" data-toggle="tab" href="#abr" role="tab" aria-controls="contact" aria-selected="false">Abr</a>
+                                    <a class="nav-link text-primary" id="abr-tab" data-toggle="tab" href="#abr" role="tab" aria-controls="contact" aria-selected="false">Abr</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="mai-tab" data-toggle="tab" href="#mai" role="tab" aria-controls="contact" aria-selected="false">Mai</a>
+                                    <a class="nav-link text-primary" id="mai-tab" data-toggle="tab" href="#mai" role="tab" aria-controls="contact" aria-selected="false">Mai</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="jun-tab" data-toggle="tab" href="#jun" role="tab" aria-controls="contact" aria-selected="false">Jun</a>
+                                    <a class="nav-link text-primary" id="jun-tab" data-toggle="tab" href="#jun" role="tab" aria-controls="contact" aria-selected="false">Jun</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="jul-tab" data-toggle="tab" href="#jul" role="tab" aria-controls="contact" aria-selected="false">Jul</a>
+                                    <a class="nav-link text-primary" id="jul-tab" data-toggle="tab" href="#jul" role="tab" aria-controls="contact" aria-selected="false">Jul</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="ago-tab" data-toggle="tab" href="#ago" role="tab" aria-controls="contact" aria-selected="false">Ago</a>
+                                    <a class="nav-link text-primary" id="ago-tab" data-toggle="tab" href="#ago" role="tab" aria-controls="contact" aria-selected="false">Ago</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="set-tab" data-toggle="tab" href="#set" role="tab" aria-controls="contact" aria-selected="false">Set</a>
+                                    <a class="nav-link text-primary" id="set-tab" data-toggle="tab" href="#set" role="tab" aria-controls="contact" aria-selected="false">Set</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="out-tab" data-toggle="tab" href="#out" role="tab" aria-controls="contact" aria-selected="false">Out</a>
+                                    <a class="nav-link text-primary" id="out-tab" data-toggle="tab" href="#out" role="tab" aria-controls="contact" aria-selected="false">Out</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="nov-tab" data-toggle="tab" href="#nov" role="tab" aria-controls="contact" aria-selected="false">Nov</a>
+                                    <a class="nav-link text-primary" id="nov-tab" data-toggle="tab" href="#nov" role="tab" aria-controls="contact" aria-selected="false">Nov</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-orange" id="dez-tab" data-toggle="tab" href="#dez" role="tab" aria-controls="contact" aria-selected="false">Dez</a>
+                                    <a class="nav-link text-primary" id="dez-tab" data-toggle="tab" href="#dez" role="tab" aria-controls="contact" aria-selected="false">Dez</a>
                                 </li>
                             </ul>
                         </div>

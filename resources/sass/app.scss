@@ -6,7 +6,9 @@
 
 // Bootstrap
 $theme-colors: (
-    "orange": #ff2d20
+    "primary": #ff2d20
 );
+
+$link-color: #ff2d20;
 
 @import '~bootstrap/scss/bootstrap';
