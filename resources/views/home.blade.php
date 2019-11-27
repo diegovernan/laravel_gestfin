@@ -11,6 +11,18 @@
 
                 <div class="card-body">
                     <div class="d-flex justify-content-between flex-wrap">
+                        <div class="mb-3">
+                            <button class="btn btn-outline-primary" type="submit">Categoria</button>
+                            <button class="btn btn-outline-primary" type="submit">Transação</button>
+                        </div>
+
+                        <div class="btn-group mb-3" role="group" aria-label="Basic example">
+                            <a class="btn btn-secondary" href="#" role="button">Relatório mensal</a>
+                            <a class="btn btn-secondary" href="#" role="button">Relatório anual</a>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between flex-wrap">
                         <div class="form-group">
                             <select class="form-control">
                                 <option>2020</option>
