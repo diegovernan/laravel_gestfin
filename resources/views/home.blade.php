@@ -12,8 +12,8 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="mb-3">
-                            <button class="btn btn-outline-primary" type="submit">Categoria</button>
-                            <button class="btn btn-outline-primary" type="submit">Transação</button>
+                            <button class="btn btn-outline-primary" type="submit" data-toggle="modal" data-target="#catMod">Categoria</button>
+                            <button class="btn btn-outline-primary" type="submit" data-toggle="modal" data-target="#transMod">Transação</button>
                         </div>
 
                         <div class="btn-group mb-3" role="group" aria-label="Basic example">
@@ -89,6 +89,48 @@
                         <div class="tab-pane fade" id="out" role="tabpanel" aria-labelledby="out-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officiis molestias qui tenetur vitae laboriosam itaque quidem blanditiis molestiae in vero eum, minus accusantium ducimus quis? Labore, sapiente est. Quod.</div>
                         <div class="tab-pane fade" id="nov" role="tabpanel" aria-labelledby="nov-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt illum inventore dolore a eos, incidunt, sed temporibus quas blanditiis libero est culpa minima aspernatur, ipsam odio aliquam vitae qui voluptas.</div>
                         <div class="tab-pane fade" id="dez" role="tabpanel" aria-labelledby="dez-tab">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem modi quaerat reiciendis in, voluptatem, dolores debitis totam nisi obcaecati consequuntur necessitatibus autem ducimus amet maiores sit temporibus similique alias facilis?</div>
+                    </div>
+
+                    <!-- Modal Category-->
+                    <div class="modal fade" id="catMod" tabindex="-1" role="dialog" aria-labelledby="catModTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="catModTitle">Adicionar categoria</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Transaction-->
+                    <div class="modal fade" id="transMod" tabindex="-1" role="dialog" aria-labelledby="transModTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="transModTitle">Adicionar transação</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-sm btn-primary">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
