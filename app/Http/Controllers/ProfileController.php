@@ -28,4 +28,16 @@ class ProfileController extends Controller
 
         return view('profile', compact('user'));
     }
+
+    public function update(Request $request, User $user)
+    {
+        $request->validate([
+            'name' => 'required|min:2|max:20'
+        ]);
+
+        $user->name = $request->name;
+        $user->save();
+
+        return redirect('/profile')->with('success', 'Perfil atualizado!');
+    }
 }
