@@ -24,10 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $month = 11;
-        $year = 2019;
-
-        $transactions = Transaction::where('id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->get();
+        $transactions = Transaction::where('id', auth()->user()->id)->get();
 
         return view('home', compact('transactions'));
     }

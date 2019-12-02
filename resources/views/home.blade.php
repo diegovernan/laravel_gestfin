@@ -99,6 +99,27 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="table-responsive mt-2">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Transação</th>
+                                            <th scope="col">Categoria</th>
+                                            <th scope="col">Data</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        @foreach ($transactions as $transaction)
+                                        <th scope="row">{{ $transaction->description }}</th>
+                                        <td>{{ $transaction->category->name }}</td>
+                                        <td>{{ $transaction->date }}</td>
+                                        @endforeach
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
