@@ -66,7 +66,7 @@
                                 <div class="col-sm-4 my-2">
                                     <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Mensal</h5>
+                                        <h5 class="card-title text-primary">Mensal</h5>
                                         <p class="card-text">Receita: x</p>
                                         <p class="card-text">Despesa: y</p>
                                         <hr>
@@ -78,7 +78,7 @@
                                 <div class="col-sm-4 my-2">
                                     <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Anual</h5>
+                                        <h5 class="card-title text-primary">Anual</h5>
                                         <p class="card-text">Receita: x</p>
                                         <p class="card-text">Despesa: y</p>
                                         <hr>
@@ -90,7 +90,7 @@
                                 <div class="col-sm-4 my-2">
                                     <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Geral</h5>
+                                        <h5 class="card-title text-primary">Geral</h5>
                                         <p class="card-text">Receita: x</p>
                                         <p class="card-text">Despesa: y</p>
                                         <hr>
@@ -103,7 +103,7 @@
                             <div class="table-responsive mt-2">
                                 <table class="table table-striped">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-primary">
                                             <th scope="col">Transação</th>
                                             <th scope="col">Categoria</th>
                                             <th scope="col">Data</th>
@@ -114,7 +114,7 @@
                                         @foreach ($transactions as $transaction)
                                         <th scope="row">{{ $transaction->description }}</th>
                                         <td>{{ $transaction->category->name }}</td>
-                                        <td>{{ $transaction->date }}</td>
+                                        <td>{{ date('d-m-Y', strtotime($transaction->date)) }}</td>
                                         @endforeach
                                         </tr>
                                     </tbody>
