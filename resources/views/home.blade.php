@@ -4,6 +4,22 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            @if( Session::has( 'success' ))
+            <div class="alert alert-success alert-dismissible fade show">
+                {{ Session::get( 'success' ) }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @elseif( Session::has( 'warning' ))
+            <div class="alert alert-warning alert-dismissible fade show">
+                {{ Session::get( 'warning' ) }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+
             <div class="card">
                 <div class="card-header text-center">
                     <span>Dashboard</span>
