@@ -29,8 +29,6 @@ class HomeController extends Controller
 
         $transactions = Transaction::where('id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->get();
 
-        // dd($transactions);
-
         return view('home', compact('transactions'));
     }
 }
