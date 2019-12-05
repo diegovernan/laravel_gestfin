@@ -40,7 +40,12 @@
 
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="form-group">
-                            <select class="form-control" name="year" onchange="location.replace('?year='+this.value)">
+                            @if (!empty($_GET['month']))
+                                @php $month = $_GET['month'] @endphp
+                            @else
+                                @php $month = date('m') @endphp
+                            @endif
+                            <select class="form-control" name="year" onchange="location.replace('?month={{ $month }}&year='+this.value)">
                                 <option value="none" selected disabled hidden>Ano</option> 
                                 @for ($y = 2015; $y <= 2025; $y++)
                                     @if (!empty($_GET['year']) && $_GET['year'] == $y)
@@ -56,9 +61,9 @@
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
                                 @for ($m=1; $m <= 12; $m++)
-                                <li class="nav-item">
-                                    <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == date('m')) ? 'active' : '' }}">{{ substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3) }}</a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == $month) ? 'active' : '' }}">{{ substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3) }}</a>
+                                    </li>
                                 @endfor
                             </ul>
                         </div>
