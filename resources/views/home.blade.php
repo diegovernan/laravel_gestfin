@@ -53,6 +53,7 @@
                                         @php $year = $y @endphp
                                     @else
                                         <option value="{{ $y }}">{{ $y }}</option>
+                                        @php $year = date('Y') @endphp
                                     @endif
                                 @endfor
                             </select>
