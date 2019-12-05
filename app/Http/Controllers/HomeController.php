@@ -22,9 +22,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $transactions = Transaction::where('id', auth()->user()->id)->get();
+        $month = 11;
+        $year = empty($request->get('year')) ? date('Y') : $request->get('year');
+
+        $transactions = Transaction::where('id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->get();
+
+        // dd($year);
 
         return view('home', compact('transactions'));
     }

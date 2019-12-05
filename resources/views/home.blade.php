@@ -40,11 +40,18 @@
 
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="form-group">
-                            <select class="form-control">
-                                @for ($y = 2020; $y <= 2025; $y++)
-                                <option>{{$y}}</option>
+                            <form action="{{ route('home') }}" method="get">
+                            <select class="form-control" name="year" onchange='this.form.submit()'>
+                                <option value="none" selected disabled hidden>Ano</option> 
+                                @for ($y = 2015; $y <= 2025; $y++)
+                                    @if (!empty($_GET['year']) && $_GET['year'] == $y)
+                                        <option value="{{ $y }}" selected="selected">{{ $y }}</option>
+                                    @else
+                                        <option value="{{ $y }}">{{ $y }}</option>
+                                    @endif
                                 @endfor
                             </select>
+                            </form>
                         </div>
 
                         <div>
@@ -52,7 +59,7 @@
                                 @for ($m=1; $m <= 12; $m++)
                                 @php $month = substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3); @endphp
                                 <li class="nav-item">
-                                    <a class="nav-link text-primary {{ ($month === substr(date('F'),0, 3)) ? 'active' : '' }}" id="{{ $month }}" data-toggle="tab" href="#{{ $month }}" role="tab" aria-controls="home" aria-selected="true">{{ $month }}</a>
+                                    <a class="nav-link text-primary @if ($month === substr(date('F'),0, 3)) active @endif" id="{{ $month }}" data-toggle="tab" href="#{{ $month }}" role="tab" aria-controls="home" aria-selected="true">{{ $month }}</a>
                                 </li>
                                 @endfor
                             </ul>
