@@ -40,35 +40,32 @@
 
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="form-group">
-                            <form action="{{ route('home') }}" method="get">
-                            <select class="form-control" name="year" onchange='this.form.submit()'>
+                            <select class="form-control" name="year" onchange="location.replace('?year='+this.value)">
                                 <option value="none" selected disabled hidden>Ano</option> 
                                 @for ($y = 2015; $y <= 2025; $y++)
                                     @if (!empty($_GET['year']) && $_GET['year'] == $y)
                                         <option value="{{ $y }}" selected="selected">{{ $y }}</option>
+                                        @php $year = $y @endphp
                                     @else
                                         <option value="{{ $y }}">{{ $y }}</option>
                                     @endif
                                 @endfor
                             </select>
-                            </form>
                         </div>
 
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
                                 @for ($m=1; $m <= 12; $m++)
-                                @php $month = substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3); @endphp
                                 <li class="nav-item">
-                                    <a class="nav-link text-primary @if ($month === substr(date('F'),0, 3)) active @endif" id="{{ $month }}" data-toggle="tab" href="#{{ $month }}" role="tab" aria-controls="home" aria-selected="true">{{ $month }}</a>
+                                    <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == date('m')) ? 'active' : '' }}">{{ substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3) }}</a>
                                 </li>
                                 @endfor
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Month content -->
                     <div class="tab-content">
-                        <div class="tab-pane fade show active" id="{{ $month }}" role="tabpanel" aria-labelledby="{{ $month }}">
+                        <div class="tab-pane fade show active">
                             <div class="row mt-2">
                                 <div class="col-sm-4 my-2">
                                     <div class="card">

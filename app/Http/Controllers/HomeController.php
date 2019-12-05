@@ -24,12 +24,12 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $month = 11;
+        $month = empty($request->get('month')) ? date('m') : $request->get('month');
         $year = empty($request->get('year')) ? date('Y') : $request->get('year');
 
-        $transactions = Transaction::where('id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->get();
+        $transactions = Transaction::where('user_id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->get();
 
-        // dd($year);
+        // dd($transactions);
 
         return view('home', compact('transactions'));
     }
