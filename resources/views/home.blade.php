@@ -170,6 +170,18 @@
                                             </td>
                                         </tr>
                                         @endforeach
+                                        @if (($month_one - $month_zero) >= 0)
+                                        <tr class="table-secondary text-success">
+                                        @else
+                                        <tr class="table-secondary text-danger">
+                                        @endif
+                                            <td colspan="4">
+                                                <strong>Total do mês</strong>
+                                            </td>
+                                            <td colspan="5">
+                                                <strong>{{ $month_one - $month_zero }}</strong>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
