@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+            <!-- Messages -->
             @if( Session::has( 'success' ))
             <div class="alert alert-success alert-dismissible fade show">
                 {{ Session::get( 'success' ) }}
@@ -110,6 +111,7 @@
                                 </div>
                             </div>
 
+                            <!-- Content -->
                             <div class="table-responsive mt-2">
                                 <table class="table table-striped">
                                     <thead>
@@ -144,11 +146,14 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
+                                <form method="post">
+                                    <div class="form-group">
+                                        <label for="InputName">Nome</label>
+                                        <input type="text" class="form-control form-control-sm" id="InputName" name="nome" required="" maxlength="20">
+                                    </div>
                                     <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-sm btn-primary">Salvar</button>
+                                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -165,11 +170,46 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="button" class="btn btn-sm btn-primary">Salvar</button>
+                                    <form method="post" action="">
+                                        <div class="form-group">
+                                            <label for="inputDesc">Descrição</label>
+                                            <input type="text" class="form-control form-control-sm" id="inputDesc" name="description" required="" maxlength="20">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputDate">Data</label>
+                                            <input type="date" class="form-control form-control-sm" id="inputDate" name="date" required="" value="">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputValue">Valor</label>
+                                            <input type="text" class="form-control form-control-sm" id="inputValue" name="value" required="" maxlength="10">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputCat">Categoria</label>
+                                            <select id="inputCat" class="form-control form-control-sm"></select>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                        <label for="form-check">Tipo</label><br>
+                                        <div class="form-check form-check-inline" id="form-check">
+                                            <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" required="">
+                                            <label class="form-check-label text-success" for="inlineRadio1">Receita</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0">
+                                            <label class="form-check-label text-danger" for="inlineRadio2">Despesa</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="type" id="inlineRadio3" value="" disabled>
+                                            <label class="form-check-label" for="inlineRadio3">Outro (desabilitado)</label>
+                                        </div>
+                                        </div>
+
+                                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-sm btn-primary">Salvar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
