@@ -80,37 +80,46 @@
                             <div class="row mt-2">
                                 <div class="col-sm-4 my-2">
                                     <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-primary">Mensal</h5>
-                                        <p class="card-text">Receita: x</p>
-                                        <p class="card-text">Despesa: y</p>
-                                        <hr>
-                                        <p>Total</p>
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-4 my-2">
-                                    <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-primary">Anual</h5>
-                                        <p class="card-text">Receita: x</p>
-                                        <p class="card-text">Despesa: y</p>
-                                        <hr>
-                                        <p>Total</p>
-                                    </div>
+                                        <div class="card-header text-center">
+                                            <strong>Balanço mensal</strong>
+                                        </div>
+                                        <div class="card-body">                                            
+                                            <p class="card-text text-success">Receita: x</p>
+                                            <p class="card-text text-danger">Despesa: y</p>                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            <strong>Total: z</strong>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4 my-2">
                                     <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-primary">Geral</h5>
-                                        <p class="card-text">Receita: x</p>
-                                        <p class="card-text">Despesa: y</p>
-                                        <hr>
-                                        <p>Total</p>
+                                        <div class="card-header text-center">
+                                            <strong>Balanço anual</strong>
+                                        </div>
+                                        <div class="card-body">                                            
+                                            <p class="card-text text-success">Receita: x</p>
+                                            <p class="card-text text-danger">Despesa: y</p>                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            <strong>Total: z</strong>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="col-sm-4 my-2">
+                                    <div class="card">
+                                        <div class="card-header text-center">
+                                            <strong>Balanço geral</strong>
+                                        </div>
+                                        <div class="card-body">                                            
+                                            <p class="card-text text-success">Receita: x</p>
+                                            <p class="card-text text-danger">Despesa: y</p>                                            
+                                        </div>
+                                        <div class="card-footer">
+                                            <strong>Total: z</strong>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
