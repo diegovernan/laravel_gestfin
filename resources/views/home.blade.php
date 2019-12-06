@@ -84,11 +84,15 @@
                                             <strong>Balanço mensal</strong>
                                         </div>
                                         <div class="card-body">                                            
-                                            <p class="card-text text-success">Receita: x</p>
-                                            <p class="card-text text-danger">Despesa: y</p>                                            
+                                            <p class="card-text text-success">Receita: {{ $month_one }}</p>
+                                            <p class="card-text text-danger">Despesa: {{ $month_zero }}</p>                                            
                                         </div>
                                         <div class="card-footer">
-                                            <strong>Total: z</strong>
+                                            @if (($month_one - $month_zero) >= 0)
+                                                <strong class="text-success">Total: {{ $month_one - $month_zero }}</strong>
+                                            @else
+                                                <strong class="text-danger">Total: {{ $month_one - $month_zero }}</strong>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -99,11 +103,15 @@
                                             <strong>Balanço anual</strong>
                                         </div>
                                         <div class="card-body">                                            
-                                            <p class="card-text text-success">Receita: x</p>
-                                            <p class="card-text text-danger">Despesa: y</p>                                            
+                                            <p class="card-text text-success">Receita: {{ $year_one }}</p>
+                                            <p class="card-text text-danger">Despesa: {{ $year_zero }}</p>                                            
                                         </div>
                                         <div class="card-footer">
-                                            <strong>Total: z</strong>
+                                            @if (($year_one - $year_zero) >= 0)
+                                                <strong class="text-success">Total: {{ $year_one - $year_zero }}</strong>
+                                            @else
+                                                <strong class="text-danger">Total: {{ $year_one - $year_zero }}</strong>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -114,11 +122,15 @@
                                             <strong>Balanço geral</strong>
                                         </div>
                                         <div class="card-body">                                            
-                                            <p class="card-text text-success">Receita: x</p>
-                                            <p class="card-text text-danger">Despesa: y</p>                                            
+                                            <p class="card-text text-success">Receita: {{ $all_one }}</p>
+                                            <p class="card-text text-danger">Despesa: {{ $all_zero }}</p>                                            
                                         </div>
                                         <div class="card-footer">
-                                            <strong>Total: z</strong>
+                                            @if (($all_one - $all_zero) >= 0)
+                                                <strong class="text-success">Total: {{ $all_one - $all_zero }}</strong>
+                                            @else
+                                                <strong class="text-danger">Total: {{ $all_one - $all_zero }}</strong>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
