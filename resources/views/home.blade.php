@@ -21,11 +21,13 @@
             </div>
             @endif
 
+            <!-- Dashboard -->
             <div class="card">
                 <div class="card-header text-center">
                     <span>Dashboard</span>
                 </div>
 
+                <!-- Options -->
                 <div class="card-body">
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="mb-3">
@@ -39,6 +41,7 @@
                         </div>
                     </div>
 
+                    <!-- Dashboard Navigation -->
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="form-group">
                             @if (!empty($_GET['month']))
@@ -71,6 +74,7 @@
                         </div>
                     </div>
 
+                    <!-- Content -->
                     <div class="tab-content">
                         <div class="tab-pane fade show active">
                             <div class="row mt-2">
@@ -111,7 +115,7 @@
                                 </div>
                             </div>
 
-                            <!-- Content -->
+                            <!-- Content table-->
                             <div class="table-responsive mt-2">
                                 <table class="table table-striped">
                                     <thead>
@@ -145,12 +149,14 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+
                                 <div class="modal-body">
                                 <form method="post">
                                     <div class="form-group">
                                         <label for="InputName">Nome</label>
                                         <input type="text" class="form-control form-control-sm" id="InputName" name="nome" required="" maxlength="20">
                                     </div>
+
                                     <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
                                     <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
                                 </form>
@@ -169,6 +175,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+
                                 <div class="modal-body">
                                     <form method="post" action="">
                                         <div class="form-group">
@@ -178,7 +185,7 @@
 
                                         <div class="form-group">
                                             <label for="inputDate">Data</label>
-                                            <input type="date" class="form-control form-control-sm" id="inputDate" name="date" required="" value="">
+                                            <input type="date" class="form-control form-control-sm" id="inputDate" name="date" required="">
                                         </div>
 
                                         <div class="form-group">
@@ -192,19 +199,19 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                        <label for="form-check">Tipo</label><br>
-                                        <div class="form-check form-check-inline" id="form-check">
-                                            <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" required="">
-                                            <label class="form-check-label text-success" for="inlineRadio1">Receita</label>
+                                            <label for="form-check">Tipo</label><br>
+                                            <div class="form-check form-check-inline" id="form-check">
+                                                <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" required="">
+                                                <label class="form-check-label text-success" for="inlineRadio1">Receita</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0">
+                                                <label class="form-check-label text-danger" for="inlineRadio2">Despesa</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="type" id="inlineRadio3" value="" disabled>
+                                                <label class="form-check-label" for="inlineRadio3">Outro (desabilitado)</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0">
-                                            <label class="form-check-label text-danger" for="inlineRadio2">Despesa</label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="type" id="inlineRadio3" value="" disabled>
-                                            <label class="form-check-label" for="inlineRadio3">Outro (desabilitado)</label>
-                                        </div>
                                         </div>
 
                                         <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
