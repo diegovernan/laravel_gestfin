@@ -1,14 +1,14 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 $theme-colors: (
-    "primary": #ff2d20
+    "primary": #1E90FF
 );
 
-$link-color: #ff2d20;
+$link-color: #1E90FF;
 
 @import '~bootstrap/scss/bootstrap';
