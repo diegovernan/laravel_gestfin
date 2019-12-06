@@ -27,7 +27,7 @@ class HomeController extends Controller
         $month = empty($request->get('month')) ? date('m') : $request->get('month');
         $year = empty($request->get('year')) ? date('Y') : $request->get('year');
 
-        $transactions = Transaction::where('user_id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->get();
+        $transactions = Transaction::where('user_id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->orderBy('date')->get();
 
         // dd($transactions);
 

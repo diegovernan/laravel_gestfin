@@ -116,23 +116,39 @@
                             </div>
 
                             <!-- Content table-->
-                            <div class="table-responsive mt-2">
+                            <div class="table-responsive mt-4">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr class="text-primary">
+                                            <th scope="col">Data</th>
                                             <th scope="col">Transação</th>
                                             <th scope="col">Categoria</th>
-                                            <th scope="col">Data</th>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Valor</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
                                         @foreach ($transactions as $transaction)
-                                        <th scope="row">{{ $transaction->description }}</th>
-                                        <td>{{ $transaction->category->name }}</td>
-                                        <td>{{ date('d-m-Y', strtotime($transaction->date)) }}</td>
-                                        @endforeach
+                                        <tr>
+                                            <td>{{ date('d-m-Y', strtotime($transaction->date)) }}</td>
+                                            <td>{{ $transaction->description }}</td>
+                                            <td>{{ $transaction->category->name }}</td>
+                                            <td>
+                                                @if ($transaction->type === 1)
+                                                    <span>Receita</span>
+                                                @else
+                                                    <span>Despesa</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($transaction->type === 1)
+                                                    <span class="text-success">{{ $transaction->value }}</span>
+                                                @else
+                                                    <span class="text-danger">{{ $transaction->value }}</span>
+                                                @endif
+                                            </td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
