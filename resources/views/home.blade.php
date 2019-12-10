@@ -43,21 +43,17 @@
 
                     <!-- Dashboard Navigation -->
                     <div class="d-flex justify-content-between flex-wrap">
+                        @if (!empty($_GET['month']) && !empty($_GET['year']))
+                            @php $month = $_GET['month']; $year = $_GET['year'] @endphp
+                        @else
+                            @php $month = date('m'); $year = date('Y') @endphp
+                        @endif
+
                         <div class="form-group">
-                            @if (!empty($_GET['month']) && !empty($_GET['year']))
-                                @php $month = $_GET['month']; $year = $_GET['year'] @endphp
-                            @else
-                                @php $month = date('m'); $year = date('Y') @endphp
-                            @endif
-                            
                             <select class="form-control" name="year" onchange="location.replace('?month={{ $month }}&year='+this.value)">
-                                <option value="none" selected disabled hidden>{{ date('Y') }}</option> 
+                                <option value="none" selected disabled hidden>{{ date('Y') }}</option>
                                 @for ($y = 2015; $y <= 2025; $y++)
-                                    @if ($y == $year)
-                                        <option value="{{ old('y') }}" selected="selected">{{ $y }}</option>
-                                    @else
-                                        <option value="{{ $y }}">{{ $y }}</option>
-                                    @endif
+                                    <option value="{{ ($y == $year) ? old('y') : $y }}" {{ ($y == $year) ? 'selected' : '' }}>{{ $y }}</option>
                                 @endfor
                             </select>
                         </div>
@@ -65,9 +61,9 @@
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
                                 @for ($m=1; $m <= 12; $m++)
-                                    <li class="nav-item">
-                                        <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == $month) ? 'active' : '' }}">{{ substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3) }}</a>
-                                    </li>
+                                <li class="nav-item">
+                                    <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == $month) ? 'active' : '' }}">{{ substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3) }}</a>
+                                </li>
                                 @endfor
                             </ul>
                         </div>
@@ -82,16 +78,12 @@
                                         <div class="card-header text-center">
                                             <strong>Balanço mensal</strong>
                                         </div>
-                                        <div class="card-body">                                            
+                                        <div class="card-body">
                                             <p class="card-text text-success">Receita: {{ $month_one }}</p>
-                                            <p class="card-text text-danger">Despesa: {{ $month_zero }}</p>                                            
+                                            <p class="card-text text-danger">Despesa: {{ $month_zero }}</p>
                                         </div>
                                         <div class="card-footer">
-                                            @if (($month_one - $month_zero) >= 0)
-                                                <strong class="text-success">Total: {{ $month_one - $month_zero }}</strong>
-                                            @else
-                                                <strong class="text-danger">Total: {{ $month_one - $month_zero }}</strong>
-                                            @endif
+                                            <strong class="{{ (($month_one - $month_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ $month_one - $month_zero }}</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -101,16 +93,12 @@
                                         <div class="card-header text-center">
                                             <strong>Balanço anual</strong>
                                         </div>
-                                        <div class="card-body">                                            
+                                        <div class="card-body">
                                             <p class="card-text text-success">Receita: {{ $year_one }}</p>
-                                            <p class="card-text text-danger">Despesa: {{ $year_zero }}</p>                                            
+                                            <p class="card-text text-danger">Despesa: {{ $year_zero }}</p>
                                         </div>
                                         <div class="card-footer">
-                                            @if (($year_one - $year_zero) >= 0)
-                                                <strong class="text-success">Total: {{ $year_one - $year_zero }}</strong>
-                                            @else
-                                                <strong class="text-danger">Total: {{ $year_one - $year_zero }}</strong>
-                                            @endif
+                                            <strong class="{{ (($year_one - $year_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ $year_one - $year_zero }}</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -120,16 +108,12 @@
                                         <div class="card-header text-center">
                                             <strong>Balanço geral</strong>
                                         </div>
-                                        <div class="card-body">                                            
+                                        <div class="card-body">
                                             <p class="card-text text-success">Receita: {{ $all_one }}</p>
-                                            <p class="card-text text-danger">Despesa: {{ $all_zero }}</p>                                            
+                                            <p class="card-text text-danger">Despesa: {{ $all_zero }}</p>
                                         </div>
                                         <div class="card-footer">
-                                            @if (($all_one - $all_zero) >= 0)
-                                                <strong class="text-success">Total: {{ $all_one - $all_zero }}</strong>
-                                            @else
-                                                <strong class="text-danger">Total: {{ $all_one - $all_zero }}</strong>
-                                            @endif
+                                            <strong class="{{ (($all_one - $all_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ $all_one - $all_zero }}</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -148,32 +132,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($transactions as $transaction)
+                                        @forelse ($transactions as $transaction)
                                         <tr>
-                                            <td>{{ date('d-m-Y', strtotime($transaction->date)) }}</td>
+                                            <td>{{ date('d/m/Y', strtotime($transaction->date)) }}</td>
                                             <td>{{ $transaction->description }}</td>
                                             <td>{{ $transaction->category->name }}</td>
                                             <td>
-                                                @if ($transaction->type === 1)
-                                                    <span>Receita</span>
-                                                @else
-                                                    <span>Despesa</span>
-                                                @endif
+                                                <span>{{ ($transaction->type == 1) ? 'Receita' : 'Despesa' }}</span>
                                             </td>
                                             <td>
-                                                @if ($transaction->type === 1)
-                                                    <span class="text-success">{{ $transaction->value }}</span>
-                                                @else
-                                                    <span class="text-danger">{{ $transaction->value }}</span>
-                                                @endif
+                                                <span class="{{ ($transaction->type == 1) ? 'text-success' : 'text-danger' }}">{{ $transaction->value }}</span>
                                             </td>
                                         </tr>
-                                        @endforeach
-                                        @if (($month_one - $month_zero) >= 0)
-                                        <tr class="table-secondary text-success">
-                                        @else
-                                        <tr class="table-secondary text-danger">
-                                        @endif
+                                        @empty
+                                        <tr>
+                                            <td colspan="5" class="text-center">Nenhuma transação encontrada...</td>
+                                        </tr>
+                                        @endforelse
+                                        <tr class="table-secondary {{ (($month_one - $month_zero) >= 0) ? 'text-success' : 'text-danger' }}">
                                             <td colspan="4">
                                                 <strong>Total do mês</strong>
                                             </td>
@@ -199,15 +175,15 @@
                                 </div>
 
                                 <div class="modal-body">
-                                <form method="post">
-                                    <div class="form-group">
-                                        <label for="InputName">Nome</label>
-                                        <input type="text" class="form-control form-control-sm" id="InputName" name="nome" required="" maxlength="20">
-                                    </div>
+                                    <form method="post">
+                                        <div class="form-group">
+                                            <label for="InputName">Nome</label>
+                                            <input type="text" class="form-control form-control-sm" id="InputName" name="nome" required="" maxlength="20">
+                                        </div>
 
-                                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
-                                </form>
+                                        <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -245,18 +221,18 @@
                                             <label for="inputCat">Categoria</label>
                                             <select id="inputCat" class="form-control form-control-sm"></select>
                                         </div>
-                                        
+
                                         <div class="form-group">
                                             <label for="form-check">Tipo</label><br>
                                             <div class="form-check form-check-inline" id="form-check">
                                                 <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" required="">
                                                 <label class="form-check-label text-success" for="inlineRadio1">Receita</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
+                                            </div>
+                                            <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0">
                                                 <label class="form-check-label text-danger" for="inlineRadio2">Despesa</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
+                                            </div>
+                                            <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="type" id="inlineRadio3" value="" disabled>
                                                 <label class="form-check-label" for="inlineRadio3">Outro (desabilitado)</label>
                                             </div>
