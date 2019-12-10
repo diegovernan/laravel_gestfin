@@ -44,20 +44,19 @@
                     <!-- Dashboard Navigation -->
                     <div class="d-flex justify-content-between flex-wrap">
                         <div class="form-group">
-                            @if (!empty($_GET['month']))
-                                @php $month = $_GET['month'] @endphp
+                            @if (!empty($_GET['month']) && !empty($_GET['year']))
+                                @php $month = $_GET['month']; $year = $_GET['year'] @endphp
                             @else
-                                @php $month = date('m') @endphp
+                                @php $month = date('m'); $year = date('Y') @endphp
                             @endif
+                            
                             <select class="form-control" name="year" onchange="location.replace('?month={{ $month }}&year='+this.value)">
-                                <option value="none" selected disabled hidden>Ano</option> 
+                                <option value="none" selected disabled hidden>{{ date('Y') }}</option> 
                                 @for ($y = 2015; $y <= 2025; $y++)
-                                    @if (!empty($_GET['year']) && $_GET['year'] == $y)
-                                        <option value="{{ $y }}" selected="selected">{{ $y }}</option>
-                                        @php $year = $y @endphp
+                                    @if ($y == $year)
+                                        <option value="{{ old('y') }}" selected="selected">{{ $y }}</option>
                                     @else
                                         <option value="{{ $y }}">{{ $y }}</option>
-                                        @php $year = date('Y') @endphp
                                     @endif
                                 @endfor
                             </select>
