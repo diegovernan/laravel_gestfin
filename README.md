@@ -21,5 +21,5 @@ $ php artisan storage:link
 
 $ php artisan serve (terminal 1)
 
-$ npm run watch (terminal 2)
+$ npm run dev (terminal 2)
 ```
