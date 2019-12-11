@@ -56,6 +56,29 @@ class HomeController extends Controller
 
         $category->save();
 
-        return back()->with('success', 'Categoria adicionada!');
+        return redirect('home')->with('success', 'Categoria adicionada!');
+    }
+
+    public function storeTransaction(Request $request)
+    {
+        $request->validate([
+            'category_id' => 'required',
+            'type' => 'required|boolean',
+            'date' => 'required|date|date_format:Y-m-d',
+            'description' => 'required|string|min:2|max:20',
+            'value' => 'required'
+        ]);
+
+        $transaction = new Transaction();
+        $transaction->user_id = auth()->user()->id;
+        $transaction->category_id = $request->category_id;
+        $transaction->type = $request->type;
+        $transaction->date = $request->date;
+        $transaction->description = $request->description;
+        $transaction->value = $request->value;
+
+        $transaction->save();
+
+        return redirect('home')->with('success', 'Transação adicionada!');
     }
 }

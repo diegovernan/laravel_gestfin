@@ -201,7 +201,7 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <form method="post" action="">
+                                    <form method="post" action="{{ route('home.store.transaction') }}">@csrf
                                         <div class="form-group">
                                             <label for="inputDesc">Descrição</label>
                                             <input type="text" class="form-control form-control-sm" id="inputDesc" name="description" required="" maxlength="20">
@@ -219,7 +219,7 @@
 
                                         <div class="form-group">
                                             <label for="inputCat">Categoria</label>
-                                            <select id="inputCat" class="form-control form-control-sm">
+                                            <select id="inputCat" class="form-control form-control-sm" name="category_id">
                                                 <option value="none" selected disabled hidden>Selecionar...</option>
                                                 @foreach ($categories as $category)
                                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -244,7 +244,7 @@
                                         </div>
 
                                         <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
-                                        <button type="button" class="btn btn-sm btn-primary">Salvar</button>
+                                        <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
                                     </form>
                                 </div>
                             </div>
