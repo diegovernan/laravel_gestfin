@@ -175,10 +175,10 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <form method="post">
+                                    <form method="post" action="{{ route('home.store.category') }}">@csrf
                                         <div class="form-group">
                                             <label for="InputName">Nome</label>
-                                            <input type="text" class="form-control form-control-sm" id="InputName" name="nome" required="" maxlength="20">
+                                            <input type="text" class="form-control form-control-sm" id="InputName" name="name" required="" maxlength="20">
                                         </div>
 
                                         <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>

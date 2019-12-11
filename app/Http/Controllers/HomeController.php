@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Transaction;
 use Illuminate\Http\Request;
 
@@ -39,5 +40,20 @@ class HomeController extends Controller
         $all_one = Transaction::where('user_id', auth()->user()->id)->whereType(1)->sum('value');
 
         return view('home', compact('transactions', 'month_zero', 'month_one', 'year_zero', 'year_one', 'all_zero', 'all_one'));
+    }
+
+    public function storeCategory(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|min:2|max:20'
+        ]);
+
+        $category = new Category;
+        $category->user_id = auth()->user()->id;
+        $category->name = $request->name;
+
+        $category->save();
+
+        return back()->with('success', 'Categoria adicionada!');
     }
 }

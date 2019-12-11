@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@storeCategory')->name('home.store.category');
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
