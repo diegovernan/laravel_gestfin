@@ -30,6 +30,8 @@ class HomeController extends Controller
 
         $transactions = Transaction::where('user_id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->orderBy('date')->get();
 
+        $categories = Category::where('user_id', auth()->user()->id)->latest()->get();
+
         $month_zero = Transaction::where('user_id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->whereType(0)->sum('value');
         $month_one = Transaction::where('user_id', auth()->user()->id)->whereMonth('date', $month)->whereYear('date', $year)->whereType(1)->sum('value');
 
@@ -39,7 +41,7 @@ class HomeController extends Controller
         $all_zero = Transaction::where('user_id', auth()->user()->id)->whereType(0)->sum('value');
         $all_one = Transaction::where('user_id', auth()->user()->id)->whereType(1)->sum('value');
 
-        return view('home', compact('transactions', 'month_zero', 'month_one', 'year_zero', 'year_one', 'all_zero', 'all_one'));
+        return view('home', compact('transactions', 'categories', 'month_zero', 'month_one', 'year_zero', 'year_one', 'all_zero', 'all_one'));
     }
 
     public function storeCategory(Request $request)

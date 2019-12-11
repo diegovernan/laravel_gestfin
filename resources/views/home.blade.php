@@ -219,7 +219,12 @@
 
                                         <div class="form-group">
                                             <label for="inputCat">Categoria</label>
-                                            <select id="inputCat" class="form-control form-control-sm"></select>
+                                            <select id="inputCat" class="form-control form-control-sm">
+                                                <option value="none" selected disabled hidden>Selecionar...</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
 
                                         <div class="form-group">
