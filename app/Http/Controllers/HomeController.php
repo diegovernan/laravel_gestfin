@@ -82,6 +82,20 @@ class HomeController extends Controller
         return redirect('home')->with('success', 'Transação adicionada!');
     }
 
+    public function updateCategory(Request $request, Category $category)
+    {
+        $request->validate([
+            'name' => 'required|string|unique:categories|min:2|max:20'
+        ]);
+
+        $category->user_id = auth()->user()->id;
+        $category->name = $request->name;
+
+        $category->save();
+
+        return redirect('home')->with('success', 'Categoria atualizada!');
+    }
+
     public function updateTransaction(Request $request, Transaction $transaction)
     {
         $request->validate([
