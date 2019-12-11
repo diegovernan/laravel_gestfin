@@ -45,7 +45,7 @@ class HomeController extends Controller
     public function storeCategory(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|min:2|max:20'
+            'name' => 'required|string|unique:categories|min:2|max:20'
         ]);
 
         $category = new Category;
