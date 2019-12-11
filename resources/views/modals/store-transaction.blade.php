@@ -10,7 +10,8 @@
             </div>
 
             <div class="modal-body">
-                <form method="post" action="{{ route('home.store.transaction') }}">@csrf
+                <form method="post" action="{{ route('home.store.transaction') }}">
+                    @csrf
                     <div class="form-group">
                         <label for="inputDesc">Descrição</label>
                         <input type="text" class="form-control form-control-sm" id="inputDesc" name="description" required="" maxlength="20">

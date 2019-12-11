@@ -125,11 +125,10 @@
                             <div class="table-responsive mt-4">
                                 <table class="table table-striped">
                                     <thead>
-                                        <tr class="text-primary">
+                                        <tr>
                                             <th scope="col">Data</th>
                                             <th scope="col">Transação</th>
                                             <th scope="col">Categoria</th>
-                                            <th scope="col">Tipo</th>
                                             <th scope="col">Valor</th>
                                         </tr>
                                     </thead>
@@ -146,9 +145,6 @@
                                                 @include('modals.update-category')
                                             </td>
                                             <td>
-                                                <span>{{ ($transaction->type == 1) ? 'Receita' : 'Despesa' }}</span>
-                                            </td>
-                                            <td>
                                                 <span class="{{ ($transaction->type == 1) ? 'text-success' : 'text-danger' }}">{{ $transaction->value }}</span>
                                             </td>
                                         </tr>
@@ -158,10 +154,10 @@
                                         </tr>
                                         @endforelse
                                         <tr class="table-secondary {{ (($month_one - $month_zero) >= 0) ? 'text-success' : 'text-danger' }}">
-                                            <td colspan="4">
+                                            <td colspan="3">
                                                 <strong>Total do mês</strong>
                                             </td>
-                                            <td colspan="5">
+                                            <td colspan="4">
                                                 <strong>{{ $month_one - $month_zero }}</strong>
                                             </td>
                                         </tr>

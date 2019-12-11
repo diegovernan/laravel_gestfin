@@ -10,7 +10,8 @@
             </div>
 
             <div class="modal-body">
-                <form method="post" action="{{ route('home.store.category') }}">@csrf
+                <form method="post" action="{{ route('home.store.category') }}">
+                    @csrf
                     <div class="form-group">
                         <label for="InputName">Nome</label>
                         <input type="text" class="form-control form-control-sm" id="InputName" name="name" required="" maxlength="20">
