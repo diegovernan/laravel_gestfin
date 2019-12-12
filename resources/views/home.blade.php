@@ -12,15 +12,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            @elseif( Session::has( 'warning' ))
-            <div class="alert alert-warning alert-dismissible fade show">
-                {{ Session::get( 'warning' ) }}
+            @elseif( Session::has( 'errors' ))
+            <div class="alert alert-danger alert-dismissible fade show">
+                @foreach ($errors->all() as $error)
+                    {{ $error }} <br>
+                @endforeach
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             @endif
-
+            
             <!-- Dashboard -->
             <div class="card">
                 <div class="card-header text-center">

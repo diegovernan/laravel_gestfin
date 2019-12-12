@@ -14,13 +14,15 @@
                     @csrf
                     <div class="form-group">
                         <label for="InputName">Nome</label>
-                        <input type="text" class="form-control form-control-sm" id="InputName" name="name" required="" maxlength="20">
+                        <input type="text" class="form-control form-control-sm" id="InputName" name="name" value="{{ old('name') }}">
                     </div>
 
                     <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
                 </form>
             </div>
+
+
         </div>
     </div>
 </div>

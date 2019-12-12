@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Transaction;
 use Illuminate\Http\Request;
+use App\Http\Requests\CategoryRequest;
 
 class HomeController extends Controller
 {
@@ -34,12 +35,8 @@ class HomeController extends Controller
         return view('home', compact('transactions', 'categories', 'month_zero', 'month_one', 'year_zero', 'year_one', 'all_zero', 'all_one'));
     }
 
-    public function storeCategory(Request $request)
+    public function storeCategory(CategoryRequest $request)
     {
-        $request->validate([
-            'name' => 'required|string|unique:categories|min:2|max:20'
-        ]);
-
         $category = new Category;
         $category->user_id = auth()->user()->id;
         $category->name = $request->name;
@@ -72,12 +69,8 @@ class HomeController extends Controller
         return redirect('home')->with('success', 'Transação adicionada!');
     }
 
-    public function updateCategory(Request $request, Category $category)
+    public function updateCategory(CategoryRequest $request, Category $category)
     {
-        $request->validate([
-            'name' => 'required|string|unique:categories|min:2|max:20'
-        ]);
-
         $category->user_id = auth()->user()->id;
         $category->name = $request->name;
 
