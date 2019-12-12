@@ -15,17 +15,17 @@
                     @method('PATCH')
                     <div class="form-group">
                         <label for="inputDesc">Descrição</label>
-                        <input type="text" class="form-control form-control-sm" id="inputDesc" name="description" required="" maxlength="20" value="{{ $transaction->description }}">
+                        <input type="text" class="form-control form-control-sm" id="inputDesc" name="description" value="{{ $transaction->description }}">
                     </div>
 
                     <div class="form-group">
                         <label for="inputDate">Data</label>
-                        <input type="date" class="form-control form-control-sm" id="inputDate" name="date" required="" value="{{ $transaction->date }}">
+                        <input type="date" class="form-control form-control-sm" id="inputDate" name="date" value="{{ $transaction->date }}">
                     </div>
 
                     <div class="form-group">
                         <label for="inputValue">Valor</label>
-                        <input type="text" class="form-control form-control-sm" id="inputValue" name="value" required="" maxlength="10" value="{{ $transaction->value }}">
+                        <input type="text" class="form-control form-control-sm" id="inputValue" name="value" value="{{ $transaction->value }}">
                     </div>
 
                     <div class="form-group">
@@ -41,11 +41,11 @@
                     <div class="form-group">
                         <label for="form-check">Tipo</label><br>
                         <div class="form-check form-check-inline" id="form-check">
-                            <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" required="" {{ ($transaction->type == 1) ? 'checked' : '' }}>
+                            <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" {{ ($transaction->type == '1') ? 'checked' : '' }}>
                             <label class="form-check-label text-success" for="inlineRadio1">Receita</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0" {{ ($transaction->type == 0) ? 'checked' : '' }}>
+                            <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0" {{ ($transaction->type == '0') ? 'checked' : '' }}>
                             <label class="form-check-label text-danger" for="inlineRadio2">Despesa</label>
                         </div>
                         <div class="form-check form-check-inline">

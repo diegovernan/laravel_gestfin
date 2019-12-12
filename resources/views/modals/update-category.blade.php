@@ -15,7 +15,7 @@
                     @method('PATCH')
                     <div class="form-group">
                         <label for="InputName">Nome</label>
-                        <input type="text" class="form-control form-control-sm" id="InputName" name="name" required="" maxlength="20" value="{{ $transaction->category->name }}">
+                        <input type="text" class="form-control form-control-sm" id="InputName" name="name" value="{{ $transaction->category->name }}">
                     </div>
 
                     <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
