@@ -14,17 +14,17 @@
                     @csrf
                     <div class="form-group">
                         <label for="inputDesc">Descrição</label>
-                        <input type="text" class="form-control form-control-sm" id="inputDesc" name="description" required="" maxlength="20">
+                        <input type="text" class="form-control form-control-sm" id="inputDesc" name="description" value="{{ old('description') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="inputDate">Data</label>
-                        <input type="date" class="form-control form-control-sm" id="inputDate" name="date" required="">
+                        <input type="date" class="form-control form-control-sm" id="inputDate" name="date" value="{{ old('date') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="inputValue">Valor</label>
-                        <input type="text" class="form-control form-control-sm" id="inputValue" name="value" required="" maxlength="10">
+                        <input type="text" class="form-control form-control-sm" id="inputValue" name="value"  value="{{ old('value') }}">
                     </div>
 
                     <div class="form-group">
@@ -32,7 +32,7 @@
                         <select id="inputCat" class="form-control form-control-sm" name="category_id">
                             <option value="none" selected disabled hidden>Selecionar...</option>
                             @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -40,11 +40,11 @@
                     <div class="form-group">
                         <label for="form-check">Tipo</label><br>
                         <div class="form-check form-check-inline" id="form-check">
-                            <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" required="">
+                            <input class="form-check-input" type="radio" name="type" id="inlineRadio1" value="1" {{ old('type') == '1' ? 'checked' : '' }}>
                             <label class="form-check-label text-success" for="inlineRadio1">Receita</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0">
+                            <input class="form-check-input" type="radio" name="type" id="inlineRadio2" value="0" {{ old('type') == '0' ? 'checked' : '' }}>
                             <label class="form-check-label text-danger" for="inlineRadio2">Despesa</label>
                         </div>
                         <div class="form-check form-check-inline">

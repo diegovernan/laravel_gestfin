@@ -6,6 +6,7 @@ use App\Category;
 use App\Transaction;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\TransactionRequest;
 
 class HomeController extends Controller
 {
@@ -46,16 +47,8 @@ class HomeController extends Controller
         return redirect('home')->with('success', 'Categoria adicionada!');
     }
 
-    public function storeTransaction(Request $request)
+    public function storeTransaction(TransactionRequest $request)
     {
-        $request->validate([
-            'category_id' => 'required',
-            'type' => 'required|boolean',
-            'date' => 'required|date|date_format:Y-m-d',
-            'description' => 'required|string|min:2|max:20',
-            'value' => 'required'
-        ]);
-
         $transaction = new Transaction();
         $transaction->user_id = auth()->user()->id;
         $transaction->category_id = $request->category_id;
@@ -79,16 +72,8 @@ class HomeController extends Controller
         return redirect('home')->with('success', 'Categoria atualizada!');
     }
 
-    public function updateTransaction(Request $request, Transaction $transaction)
+    public function updateTransaction(TransactionRequest $request, Transaction $transaction)
     {
-        $request->validate([
-            'category_id' => 'required',
-            'type' => 'required|boolean',
-            'date' => 'required|date|date_format:Y-m-d',
-            'description' => 'required|string|min:2|max:20',
-            'value' => 'required'
-        ]);
-
         $transaction->user_id = auth()->user()->id;
         $transaction->category_id = $request->category_id;
         $transaction->type = $request->type;
