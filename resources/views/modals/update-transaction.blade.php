@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateTransaction{{ $transaction->id }}Title">Editar transação</h5>
+                <h5 class="modal-title" id="updateTransaction{{ $transaction->id }}Title">Atualizar transação</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -54,8 +54,20 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                        </div>
+
+                        <div>
+                            <form method="post" action="{{ route('home.delete.transaction', $transaction->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger float-right" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
+                            </form>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

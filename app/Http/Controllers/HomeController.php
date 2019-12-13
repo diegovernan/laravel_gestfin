@@ -85,4 +85,11 @@ class HomeController extends Controller
 
         return redirect('home')->with('success', 'Transação atualizada!');
     }
+
+    public function deleteTransaction(Transaction $transaction)
+    {
+        $transaction->delete();
+
+        return redirect('home')->with('success', 'Transação excluída!');
+    }
 }
