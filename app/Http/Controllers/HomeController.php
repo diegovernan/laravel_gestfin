@@ -86,6 +86,17 @@ class HomeController extends Controller
         return redirect('home')->with('success', 'Transação atualizada!');
     }
 
+    public function deleteCategory(Category $category)
+    {
+        try {
+            $category->delete();
+
+            return redirect('home')->with('success', 'Categoria excluída!');
+        } catch (\Exception $e) {
+            return redirect('home')->withErrors(['Categoria NÃO excluída! Apenas categorias sem transações podem ser excluídas.']);
+        }
+    }
+
     public function deleteTransaction(Transaction $transaction)
     {
         $transaction->delete();

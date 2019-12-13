@@ -20,9 +20,25 @@
                     <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
                     <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
                 </form>
+
+                <hr>
+
+                @foreach ($categories as $category)
+                <p class="d-flex justify-content-between">
+                    
+                    <form method="post" action="{{ route('home.delete.category', $category->id) }}">
+                        @csrf
+                        @method('DELETE')
+
+                        {{ $category->name }}
+                        
+                        <button type="submit" class="close text-danger" aria-label="Close" onclick="return confirm('Tem certeza que deseja excluir?')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </form>
+                </p>
+                @endforeach
             </div>
-
-
         </div>
     </div>
 </div>
