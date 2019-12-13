@@ -131,7 +131,7 @@
                                             <th scope="col">Data</th>
                                             <th scope="col">Transação</th>
                                             <th scope="col">Categoria</th>
-                                            <th scope="col">Valor</th>
+                                            <th scope="col" class="text-right">Valor</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -146,8 +146,8 @@
                                                 <a href="" target="_blank" data-toggle="modal" data-target="#updateCategory{{ $transaction->category->id }}">{{ $transaction->category->name }}</a>
                                                 @include('modals.update-category')
                                             </td>
-                                            <td>
-                                                <span class="{{ ($transaction->type == 1) ? 'text-success' : 'text-danger' }}">{{ $transaction->value }}</span>
+                                            <td class="text-right">
+                                                <span class="{{ ($transaction->type == 1) ? 'text-success' : 'text-danger' }}">R$ {{ $transaction->value }}</span>
                                             </td>
                                         </tr>
                                         @empty
@@ -159,8 +159,8 @@
                                             <td colspan="3">
                                                 <strong>Total do mês</strong>
                                             </td>
-                                            <td colspan="4">
-                                                <strong>{{ $month_one - $month_zero }}</strong>
+                                            <td colspan="4" class="text-right">
+                                                <strong>R$ {{ $month_one - $month_zero }}</strong>
                                             </td>
                                         </tr>
                                     </tbody>
