@@ -33,7 +33,7 @@
             <!-- Dashboard -->
             <div class="card">
                 <div class="card-header text-center">
-                    <strong>{{ date('F', mktime(0, 0, 0, $month, 1)) }} - {{ $year }}</strong>
+                    <strong>{{ translatedMonth($month) }} - {{ $year }}</strong>
                 </div>
 
                 <!-- Options -->
@@ -66,7 +66,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 @for ($m=1; $m <= 12; $m++) 
                                 <li class="nav-item">
-                                    <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == $month) ? 'active' : '' }}">{{ substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3) }}</a>
+                                    <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == $month) ? 'active' : '' }}">{{ substr(translatedMonth($m),0, 3) }}</a>
                                 </li>
                                 @endfor
                             </ul>
