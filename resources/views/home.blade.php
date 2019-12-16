@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (!empty($_GET['month']) && !empty($_GET['year']))
+@php $month = $_GET['month']; $year = $_GET['year'] @endphp
+@else
+@php $month = date('m'); $year = date('Y') @endphp
+@endif
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -15,23 +22,23 @@
             @elseif( Session::has( 'errors' ))
             <div class="alert alert-danger alert-dismissible fade show">
                 @foreach ($errors->all() as $error)
-                    {{ $error }} <br>
+                {{ $error }} <br>
                 @endforeach
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             @endif
-            
+
             <!-- Dashboard -->
             <div class="card">
                 <div class="card-header text-center">
-                    <span>Dashboard</span>
+                    <strong>{{ date('F', mktime(0, 0, 0, $month, 1)) }} - {{ $year }}</strong>
                 </div>
 
                 <!-- Options -->
                 <div class="card-body">
-                    <div class="d-flex justify-content-between flex-wrap">
+                    <div class="d-flex justify-content-between flex-wrap d-print-none">
                         <div class="mb-3">
                             <button class="btn btn-outline-primary" type="submit" data-toggle="modal" data-target="#storeCategory">Categoria</button>
                             @include('modals.store-category')
@@ -40,31 +47,24 @@
                         </div>
 
                         <div class="btn-group mb-3" role="group" aria-label="Basic example">
-                            <a class="btn btn-secondary" href="#" role="button">Relatório mensal</a>
-                            <a class="btn btn-secondary" href="#" role="button">Relatório anual</a>
+                            <button class="btn btn-sm btn-secondary" onclick="window.print()">Imprimir relatório</button>
                         </div>
                     </div>
 
                     <!-- Dashboard Navigation -->
-                    <div class="d-flex justify-content-between flex-wrap">
-                        @if (!empty($_GET['month']) && !empty($_GET['year']))
-                            @php $month = $_GET['month']; $year = $_GET['year'] @endphp
-                        @else
-                            @php $month = date('m'); $year = date('Y') @endphp
-                        @endif
-
+                    <div class="d-flex justify-content-between flex-wrap d-print-none">
                         <div class="form-group">
                             <select class="form-control" name="year" onchange="location.replace('?month={{ $month }}&year='+this.value)">
                                 <option value="none" selected disabled hidden>{{ date('Y') }}</option>
-                                @for ($y = 2015; $y <= 2025; $y++)
-                                    <option value="{{ ($y == $year) ? old('y') : $y }}" {{ ($y == $year) ? 'selected' : '' }}>{{ $y }}</option>
+                                @for ($y = 2015; $y <= 2025; $y++) 
+                                <option value="{{ ($y == $year) ? old('y') : $y }}" {{ ($y == $year) ? 'selected' : '' }}>{{ $y }}</option>
                                 @endfor
                             </select>
                         </div>
 
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
-                                @for ($m=1; $m <= 12; $m++)
+                                @for ($m=1; $m <= 12; $m++) 
                                 <li class="nav-item">
                                     <a href="?month={{ $m }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == $month) ? 'active' : '' }}">{{ substr(date('F', mktime(0, 0, 0, $m, 1)),0, 3) }}</a>
                                 </li>
@@ -76,7 +76,7 @@
                     <!-- Content -->
                     <div class="tab-content">
                         <div class="tab-pane fade show active">
-                            <div class="row mt-2">
+                            <div class="row mt-2 d-print-none">
                                 <div class="col-sm-4 my-2">
                                     <div class="card">
                                         <div class="card-header text-center">
@@ -167,7 +167,7 @@
                                 </table>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
