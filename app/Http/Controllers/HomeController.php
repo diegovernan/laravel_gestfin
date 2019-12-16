@@ -44,7 +44,7 @@ class HomeController extends Controller
 
         $category->save();
 
-        return redirect('home')->with('success', 'Categoria adicionada!');
+        return redirect()->back()->with('success', 'Categoria adicionada!');
     }
 
     public function storeTransaction(TransactionRequest $request)
@@ -59,7 +59,7 @@ class HomeController extends Controller
 
         $transaction->save();
 
-        return redirect('home')->with('success', 'Transação adicionada!');
+        return redirect()->back()->with('success', 'Transação adicionada!');
     }
 
     public function updateCategory(CategoryRequest $request, Category $category)
@@ -69,7 +69,7 @@ class HomeController extends Controller
 
         $category->save();
 
-        return redirect('home')->with('success', 'Categoria atualizada!');
+        return redirect()->back()->with('success', 'Categoria atualizada!');
     }
 
     public function updateTransaction(TransactionRequest $request, Transaction $transaction)
@@ -83,7 +83,7 @@ class HomeController extends Controller
 
         $transaction->save();
 
-        return redirect('home')->with('success', 'Transação atualizada!');
+        return redirect()->back()->with('success', 'Transação atualizada!');
     }
 
     public function deleteCategory(Category $category)
@@ -93,7 +93,7 @@ class HomeController extends Controller
 
             return redirect('home')->with('success', 'Categoria excluída!');
         } catch (\Exception $e) {
-            return redirect('home')->withErrors(['Categoria NÃO excluída! Apenas categorias sem transações podem ser excluídas.']);
+            return redirect()->back()->withErrors(['Categoria NÃO excluída! Apenas categorias sem transações podem ser excluídas.']);
         }
     }
 
@@ -101,6 +101,6 @@ class HomeController extends Controller
     {
         $transaction->delete();
 
-        return redirect('home')->with('success', 'Transação excluída!');
+        return redirect()->back()->with('success', 'Transação excluída!');
     }
 }
