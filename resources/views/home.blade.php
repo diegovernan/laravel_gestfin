@@ -40,9 +40,9 @@
                 <div class="card-body">
                     <div class="d-flex justify-content-between flex-wrap d-print-none">
                         <div class="mb-3">
-                            <button class="btn btn-outline-primary" type="submit" data-toggle="modal" data-target="#storeCategory">Categoria</button>
+                            <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#storeCategory">Categoria</button>
                             @include('modals.store-category')
-                            <button class="btn btn-outline-primary" type="submit" data-toggle="modal" data-target="#storeTransaction">Transação</button>
+                            <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#storeTransaction">Transação</button>
                             @include('modals.store-transaction')
                         </div>
 
