@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="btn-group mb-3" role="group" aria-label="Basic example">
-                            <button class="btn btn-sm btn-secondary" onclick="window.print()">Imprimir relatório</button>
+                            <button class="btn btn-sm btn-secondary" onclick="document.title='relatorio_{{ $month }}_{{ $year }}';window.print()">Imprimir relatório</button>
                         </div>
                     </div>
 
