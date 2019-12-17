@@ -2,6 +2,8 @@
 
 Auth::routes();
 
+Auth::routes(['verify' => true]);
+
 Route::get('/', function () {
     return redirect('home');
 });
