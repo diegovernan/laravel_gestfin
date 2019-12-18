@@ -91,7 +91,7 @@ class HomeController extends Controller
         try {
             $category->delete();
 
-            return redirect('home')->with('success', 'Categoria excluída!');
+            return redirect()->back()->with('success', 'Categoria excluída!');
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['Categoria NÃO excluída! Apenas categorias sem transações podem ser excluídas.']);
         }
