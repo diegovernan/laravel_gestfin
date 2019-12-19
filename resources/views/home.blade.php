@@ -37,11 +37,11 @@
             </div>
             <script type="text/javascript">
                 swal({
-                    title:'Sucesso!',
-                    html:jQuery(".alert").html(),
-                    type:'success'
+                    title: 'Sucesso!',
+                    html: jQuery(".alert").html(),
+                    type: 'success'
                 }).then((value) => {
-                //location.reload();
+                    //location.reload();
                 }).catch(swal.noop);
             </script>
             @elseif(Session::has('errors'))
@@ -52,11 +52,11 @@
             </div>
             <script type="text/javascript">
                 swal({
-                    title:'Oops!',
-                    html:jQuery(".alert").html(),
-                    type:'error'
+                    title: 'Oops!',
+                    html: jQuery(".alert").html(),
+                    type: 'error'
                 }).then((value) => {
-                //location.reload();
+                    //location.reload();
                 }).catch(swal.noop);
             </script>
             @endif
@@ -87,7 +87,7 @@
                         <div class="form-group">
                             <select class="form-control" name="year" onchange="location.replace('?month={{ str_pad($month, 2, 0, STR_PAD_LEFT) }}&year='+this.value)">
                                 <option value="none" selected disabled hidden>{{ date('Y') }}</option>
-                                @for ($y = 2015; $y <= 2025; $y++) 
+                                @for ($y = 2015; $y <= 2025; $y++)
                                 <option value="{{ ($y == $year) ? old('y') : $y }}" {{ ($y == $year) ? 'selected' : '' }}>{{ $y }}</option>
                                 @endfor
                             </select>
@@ -95,7 +95,7 @@
 
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
-                                @for ($m=1; $m <= 12; $m++) 
+                                @for ($m=1; $m <= 12; $m++)
                                 <li class="nav-item">
                                     <a href="?month={{ str_pad($m, 2, 0, STR_PAD_LEFT) }}&year={{ $year ?? '' }}" class="nav-link text-primary {{ ($m == $month) ? 'active' : '' }}">{{ substr(translatedMonth($m),0, 3) }}</a>
                                 </li>

@@ -54,20 +54,16 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
-                        </div>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                </form>
+            </div>
 
-                        <div>
-                            <form method="post" action="{{ route('home.delete.transaction', $transaction->id) }}">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger float-right" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
-                            </form>
-                        </div>
-                    </div>
+            <div class="modal-footer">
+                <form method="post" action="{{ route('home.delete.transaction', $transaction->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger float-right" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
                 </form>
             </div>
         </div>

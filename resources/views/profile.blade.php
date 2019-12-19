@@ -30,11 +30,11 @@
             </div>
             <script type="text/javascript">
                 swal({
-                    title:'Sucesso!',
-                    html:jQuery(".alert").html(),
-                    type:'success'
+                    title: 'Sucesso!',
+                    html: jQuery(".alert").html(),
+                    type: 'success'
                 }).then((value) => {
-                //location.reload();
+                    //location.reload();
                 }).catch(swal.noop);
             </script>
             @elseif(Session::has('errors'))
@@ -45,11 +45,11 @@
             </div>
             <script type="text/javascript">
                 swal({
-                    title:'Oops!',
-                    html:jQuery(".alert").html(),
-                    type:'error'
+                    title: 'Oops!',
+                    html: jQuery(".alert").html(),
+                    type: 'error'
                 }).then((value) => {
-                //location.reload();
+                    //location.reload();
                 }).catch(swal.noop);
             </script>
             @endif
