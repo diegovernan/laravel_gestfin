@@ -1,9 +1,9 @@
 <?php
 
-function moneyFormat($value)
+function formattedMoney($value)
 {
-    $formatedValue = number_format($value, 2, ',', '.');
-    return "R$ " . $formatedValue;
+    $formattedMoney = number_format($value, 2, ',', '.');
+    return "R$ " . $formattedMoney;
 }
 
 function translatedMonth($month)
