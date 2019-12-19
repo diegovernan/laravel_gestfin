@@ -28,7 +28,7 @@ class TransactionRequest extends FormRequest
             'type' => 'required|boolean',
             'date' => 'required|date|date_format:Y-m-d',
             'description' => 'required|alpha_num|min:2|max:20',
-            'value' => 'required|numeric'
+            'value' => 'required|string'
         ];
     }
 
@@ -48,7 +48,6 @@ class TransactionRequest extends FormRequest
             'description.min' => 'A descrição de transação precisa ter no mínimo 2 caracteres.',
             'description.max' => 'A descrição de transação precisa ter no máximo 20 caracteres.',
             'value.required' => 'O valor de transação é obrigatório.',
-            'value.numeric' => 'O valor de transação precisa ser numérico.',
         ];
     }
 }

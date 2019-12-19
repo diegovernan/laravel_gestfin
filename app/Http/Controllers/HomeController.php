@@ -55,7 +55,7 @@ class HomeController extends Controller
         $transaction->type = $request->type;
         $transaction->date = $request->date;
         $transaction->description = $request->description;
-        $transaction->value = $request->value;
+        $transaction->value = str_replace(",", ".", $request->value);
 
         $transaction->save();
 
@@ -79,7 +79,7 @@ class HomeController extends Controller
         $transaction->type = $request->type;
         $transaction->date = $request->date;
         $transaction->description = $request->description;
-        $transaction->value = $request->value;
+        $transaction->value = str_replace(",", ".", $request->value);
 
         $transaction->save();
 

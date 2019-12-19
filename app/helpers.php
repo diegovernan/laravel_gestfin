@@ -1,5 +1,11 @@
 <?php
 
+function moneyFormat($value)
+{
+    $formatedValue = number_format($value, 2, ',', '.');
+    return "R$ " . $formatedValue;
+}
+
 function translatedMonth($month)
 {
     switch ($month) {

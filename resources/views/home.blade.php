@@ -114,11 +114,11 @@
                                             <strong>Balanço mensal</strong>
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text text-success">Receita: {{ $month_one }}</p>
-                                            <p class="card-text text-danger">Despesa: {{ $month_zero }}</p>
+                                            <p class="card-text text-success">Receita: {{ moneyFormat($month_one) }}</p>
+                                            <p class="card-text text-danger">Despesa: {{ moneyFormat($month_zero) }}</p>
                                         </div>
                                         <div class="card-footer">
-                                            <strong class="{{ (($month_one - $month_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ $month_one - $month_zero }}</strong>
+                                            <strong class="{{ (($month_one - $month_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ moneyFormat($month_one - $month_zero) }}</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -129,11 +129,11 @@
                                             <strong>Balanço anual</strong>
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text text-success">Receita: {{ $year_one }}</p>
-                                            <p class="card-text text-danger">Despesa: {{ $year_zero }}</p>
+                                            <p class="card-text text-success">Receita: {{ moneyFormat($year_one) }}</p>
+                                            <p class="card-text text-danger">Despesa: {{ moneyFormat($year_zero) }}</p>
                                         </div>
                                         <div class="card-footer">
-                                            <strong class="{{ (($year_one - $year_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ $year_one - $year_zero }}</strong>
+                                            <strong class="{{ (($year_one - $year_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ moneyFormat($year_one - $year_zero) }}</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -144,11 +144,11 @@
                                             <strong>Balanço geral</strong>
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text text-success">Receita: {{ $all_one }}</p>
-                                            <p class="card-text text-danger">Despesa: {{ $all_zero }}</p>
+                                            <p class="card-text text-success">Receita: {{ moneyFormat($all_one) }}</p>
+                                            <p class="card-text text-danger">Despesa: {{ moneyFormat($all_zero) }}</p>
                                         </div>
                                         <div class="card-footer">
-                                            <strong class="{{ (($all_one - $all_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ $all_one - $all_zero }}</strong>
+                                            <strong class="{{ (($all_one - $all_zero) >= 0) ? 'text-success' : 'text-danger' }}">Total: {{ moneyFormat($all_one - $all_zero) }}</strong>
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +178,7 @@
                                                 @include('modals.update-category')
                                             </td>
                                             <td class="text-right">
-                                                <span class="{{ ($transaction->type == 1) ? 'text-success' : 'text-danger' }}">R$ {{ $transaction->value }}</span>
+                                                <span class="{{ ($transaction->type == 1) ? 'text-success' : 'text-danger' }}">{{ moneyFormat($transaction->value) }}</span>
                                             </td>
                                         </tr>
                                         @empty
@@ -191,7 +191,7 @@
                                                 <strong>Total do mês</strong>
                                             </td>
                                             <td colspan="4" class="text-right">
-                                                <strong>R$ {{ $month_one - $month_zero }}</strong>
+                                                <strong>{{ moneyFormat($month_one - $month_zero) }}</strong>
                                             </td>
                                         </tr>
                                     </tbody>

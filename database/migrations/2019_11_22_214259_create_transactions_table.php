@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->boolean('type');
             $table->date('date');
             $table->string('description');
-            $table->double('value');
+            $table->string('value');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

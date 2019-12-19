@@ -24,7 +24,7 @@
 
                     <div class="form-group">
                         <label for="inputValue">Valor</label>
-                        <input type="text" class="form-control form-control-sm" id="inputValue" name="value"  value="{{ old('value') }}">
+                        <input type="text" class="form-control form-control-sm money" id="inputValue" name="value"  value="{{ old('value') }}">
                     </div>
 
                     <div class="form-group">
