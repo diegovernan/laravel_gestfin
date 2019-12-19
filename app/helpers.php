@@ -9,31 +9,31 @@ function moneyFormat($value)
 function translatedMonth($month)
 {
     switch ($month) {
-        case '1':
+        case '01':
             $translatedMonth = "Janeiro";
             break;
-        case '2':
+        case '02':
             $translatedMonth = "Fevereiro";
             break;
-        case '3':
+        case '03':
             $translatedMonth = "Março";
             break;
-        case '4':
+        case '04':
             $translatedMonth = "Abril";
             break;
-        case '5':
+        case '05':
             $translatedMonth = "Maio";
             break;
-        case '6':
+        case '06':
             $translatedMonth = "Junho";
             break;
-        case '7':
+        case '07':
             $translatedMonth = "Julho";
             break;
-        case '8':
+        case '08':
             $translatedMonth = "Agosto";
             break;
-        case '9':
+        case '09':
             $translatedMonth = "Setembro";
             break;
         case '10':
