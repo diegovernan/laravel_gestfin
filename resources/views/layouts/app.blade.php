@@ -86,7 +86,7 @@
             @yield('content')
         </main>
     </div>
-    
+
     <script type="text/javascript">
         jQuery(document).ready(function() {
             jQuery('.money').mask("#.##0,00", {

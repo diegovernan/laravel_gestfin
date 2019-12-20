@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="post" action="{{ route('profile.update', $user->id) }}">
+                    <form method="post" action="{{ route('profile.update.name', $user->id) }}">
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
@@ -83,22 +83,22 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="post" action="#">
+                    <form method="post" action="{{ route('profile.update.pass', $user->id) }}">
                         @csrf
                         @method('PATCH')
                         <div class="form-group">
                             <label for="Input2">Senha atual</label>
-                            <input type="text" class="form-control" id="Input2" name="old_password">
+                            <input type="password" class="form-control" id="Input2" name="old_password">
                         </div>
 
                         <div class="form-group">
                             <label for="Input3">Nova senha</label>
-                            <input type="text" class="form-control" id="Input3" name="new_password">
+                            <input type="password" class="form-control" id="Input3" name="new_password">
                         </div>
 
                         <div class="form-group">
                             <label for="Input4">Confirmação da nova senha</label>
-                            <input type="text" class="form-control" id="Input4" name="password_confirm">
+                            <input type="password" class="form-control" id="Input4" name="password_confirm">
                         </div>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>

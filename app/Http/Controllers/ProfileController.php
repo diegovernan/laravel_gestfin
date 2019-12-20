@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -19,7 +20,7 @@ class ProfileController extends Controller
         return view('profile', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function updateName(Request $request, User $user)
     {
         $request->validate([
             'name' => 'required|min:2|max:20'
@@ -28,6 +29,24 @@ class ProfileController extends Controller
         $user->name = $request->name;
         $user->save();
 
-        return redirect('profile')->with('success', 'Perfil atualizado!');
+        return redirect()->back()->with('success', 'Perfil atualizado!');
+    }
+
+    public function updatePass(Request $request, User $user)
+    {
+        $request->validate([
+            'old_password' => 'required|string|min:8',
+            'new_password' => 'required|string|min:8',
+            'password_confirm' => 'required|string|min:8|same:new_password'
+        ]);
+
+        if (!(Hash::check($request->old_password, auth()->user()->password))) {
+            return redirect()->back()->withErrors('Sua senha atual está incorreta. Por favor, tente novamente.');
+        }
+
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return redirect()->back()->with('success', 'Senha atualizada!');
     }
 }

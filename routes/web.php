@@ -17,4 +17,5 @@ Route::delete('/home/transaction/{transaction}', 'HomeController@deleteTransacti
 
 Route::get('/profile', 'ProfileController@index')->name('profile');
 
-Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
+Route::patch('/profile/{user}/name', 'ProfileController@updateName')->name('profile.update.name');
+Route::patch('/profile/{user}/pass', 'ProfileController@updatePass')->name('profile.update.pass');
