@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Requests\NameRequest;
+use App\Http\Requests\PassRequest;
 
 class ProfileController extends Controller
 {
@@ -29,16 +30,10 @@ class ProfileController extends Controller
         return redirect()->back()->with('success', 'Perfil atualizado!');
     }
 
-    public function updatePass(Request $request, User $user)
+    public function updatePass(PassRequest $request, User $user)
     {
-        $request->validate([
-            'old_password' => 'required|string|min:8',
-            'new_password' => 'required|string|min:8',
-            'password_confirm' => 'required|string|min:8|same:new_password'
-        ]);
-
         if (!(Hash::check($request->old_password, auth()->user()->password))) {
-            return redirect()->back()->withErrors('Sua senha atual está incorreta. Por favor, tente novamente.');
+            return redirect()->back()->withErrors('A senha atual está incorreta. Por favor, tente novamente.');
         }
 
         $user->password = Hash::make($request->new_password);
