@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Http\Requests\NameRequest;
 
 class ProfileController extends Controller
 {
@@ -20,12 +21,8 @@ class ProfileController extends Controller
         return view('profile', compact('user'));
     }
 
-    public function updateName(Request $request, User $user)
+    public function updateName(NameRequest $request, User $user)
     {
-        $request->validate([
-            'name' => 'required|min:2|max:20'
-        ]);
-
         $user->name = $request->name;
         $user->save();
 
