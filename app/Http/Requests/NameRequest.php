@@ -24,7 +24,7 @@ class NameRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|alpha_num|min:2|max:20'
+            'name' => 'required|string|min:2|max:20'
         ];
     }
 
