@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use Carbon\Carbon;
 use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,16 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        VerifyEmail::toMailUsing(function ($notifiable) {
-            $verifyUrl = URL::temporarySignedRoute(
-                'verification.verify',
-                Carbon::now()->addMinutes(60),
-                ['id' => $notifiable->getKey()]
-            );
-
-            return (new MailMessage)
-                ->subject('Bem-vindo!')
-                ->markdown('emails.verify', ['url' => $verifyUrl]);
+        VerifyEmail::toMailUsing(function ($notifiable, $url) {
+            $mail = new MailMessage;
+            $mail->subject('Bem-vindo!');
+            $mail->markdown('emails.verify', ['url' => $url]);
+            return $mail;
         });
     }
 }
