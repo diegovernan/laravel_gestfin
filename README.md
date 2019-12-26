@@ -1,5 +1,7 @@
 # Sistema de gestão financeira (em construção)
 
+![alt test](screenshots/1.png)
+
 Para inicializar o projeto após cloná-lo, fazer:
 
 ```bash
@@ -10,7 +12,7 @@ $ npm install
 $ cp .env.example .env
 
 $ php artisan key:generate
-
+https://github.com/diegovernan
 - Criar banco de dados vazio (MySQL)
 
 - Editar arquivo .env linhas 12, 13 e 14
