@@ -16,7 +16,7 @@ $ npm install
 $ cp .env.example .env
 
 $ php artisan key:generate
-https://github.com/diegovernan
+
 - Criar banco de dados vazio (MySQL)
 
 - Editar arquivo .env linhas 12, 13 e 14
