@@ -37,7 +37,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'O nome de categoria é obrigatório.',
-            'name.alpha_num' => 'O nome de categoria precisa ser alfanumérico.',
+            'name.string' => 'O nome de categoria não é válido.',
             'name.unique' => 'O nome de categoria já existe.',
             'name.min' => 'O nome de categoria precisa ter no mínimo 2 caracteres.',
             'name.max' => 'O nome de categoria precisa ter no máximo 20 caracteres.',
