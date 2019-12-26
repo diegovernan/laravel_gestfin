@@ -1,6 +1,10 @@
-# Sistema de gestão financeira (em construção)
+# Sistema de gestão financeira (Laravel 6.X)
 
 ![alt test](screenshots/1.png)
+
+![alt test](screenshots/2.png)
+
+![alt test](screenshots/3.png)
 
 Para inicializar o projeto após cloná-lo, fazer:
 
