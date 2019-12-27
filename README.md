@@ -36,7 +36,7 @@ $ php artisan key:generate
 
 Cria banco de dados vazio (MySQL)
 ```bash
-$ mysql -u root -p root
+$ mysql -uroot -proot
 $ create database gestfin;
 ```
 
