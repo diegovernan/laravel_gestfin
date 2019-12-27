@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|unique:categories|min:2|max:20'
+            'name' => 'required|string|min:2|max:20',
         ];
     }
 
@@ -38,7 +38,6 @@ class CategoryRequest extends FormRequest
         return [
             'name.required' => 'O nome de categoria é obrigatório.',
             'name.string' => 'O nome de categoria não é válido.',
-            'name.unique' => 'O nome de categoria já existe.',
             'name.min' => 'O nome de categoria precisa ter no mínimo 2 caracteres.',
             'name.max' => 'O nome de categoria precisa ter no máximo 20 caracteres.',
         ];

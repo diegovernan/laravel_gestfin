@@ -37,7 +37,7 @@ class NameRequest extends FormRequest
     {
         return [
             'name.required' => 'O nome de usuário é obrigatório.',
-            'name.alpha_num' => 'O nome de usuário precisa ser alfanumérico.',
+            'name.string' => 'O nome de usuário não é válido.',
             'name.min' => 'O nome de usuário precisa ter no mínimo 2 caracteres.',
             'name.max' => 'O nome de usuário precisa ter no máximo 20 caracteres.',
         ];
