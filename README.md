@@ -9,7 +9,10 @@
 
 ### Instalação
 
-- Para inicializar o projeto após cloná-lo, fazer:
+Clona o projeto
+```bash
+$ git clone git@github.com:diegovernan/laravel_gestao_financeira.git
+```
 
 Instala o composer
 ```bash
