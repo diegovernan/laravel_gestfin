@@ -11,7 +11,7 @@
 
 Clona o projeto
 ```bash
-$ git clone git@github.com:diegovernan/laravel_gestao_financeira.git
+$ git clone git@github.com:diegovernan/laravel_gestfin.git
 ```
 
 Instala o composer
