@@ -1,4 +1,4 @@
-# GestFin - Sistema de gestão financeira (Laravel 6.X)
+# GestFin - Sistema de gestão financeira (Laravel 6.0)
 
 ![alt test](screenshots/1.png)
 
@@ -7,7 +7,7 @@
 ![alt test](screenshots/3.png)
 
 
-### Instalação
+## Instalação
 
 Clona o projeto
 ```bash
