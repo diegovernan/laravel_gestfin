@@ -24,7 +24,7 @@ Instala o npm
 $ npm install
 ```
 
-Copia arquivo .env
+Cria arquivo .env
 ```bash
 $ cp .env.example .env
 ```
