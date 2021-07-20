@@ -1,4 +1,4 @@
-# GestFin - Sistema de gestão financeira (Laravel 6.0)
+# GestFin - Sistema de gestão financeira (Laravel 6.X)
 
 ![alt test](screenshots/1.png)
 
@@ -22,11 +22,6 @@ $ git clone git@github.com:diegovernan/laravel_gestfin.git
 Instala o composer
 ```bash
 $ composer install
-```
-
-Instala o npm
-```bash
-$ npm install
 ```
 
 Copia arquivo .env.example para arquivo .env
@@ -70,6 +65,7 @@ MAIL_USERNAME=seu usuário aqui
 MAIL_PASSWORD=sua senha aqui
 MAIL_FROM_ADDRESS=from@example.com
 MAIL_FROM_NAME=Example
+MAIL_ENCRYPTION=tls
 ```
 
 Roda servidor local na porta 8000
