@@ -153,7 +153,7 @@
                     </div>
                     
                     <div class="text-right">
-                        <span>Por <a href="http://www.diegovernan.com.br" target="_blank" class="text-primary">Diego Vernan</a></span>
+                        <span>Por <a href="https://www.diegovernan.com.br" target="_blank" class="text-primary">Diego Vernan</a></span>
                     </div>
                 </div>
             </div>
