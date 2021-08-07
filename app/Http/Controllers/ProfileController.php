@@ -10,11 +10,6 @@ use App\Http\Requests\PassRequest;
 
 class ProfileController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth', 'verified']);
-    }
-
     public function index()
     {
         $user = User::where('id', auth()->user()->id)->first();

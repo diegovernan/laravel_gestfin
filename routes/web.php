@@ -7,7 +7,7 @@ Auth::routes(['verify' => true]);
 
 Route::redirect('/', '/home');
 
-Route::group(['prefix' => 'home'], function () {
+Route::middleware(['auth', 'verified'])->prefix('home')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::post('/category', 'HomeController@storeCategory')->name('home.store.category');
@@ -20,7 +20,7 @@ Route::group(['prefix' => 'home'], function () {
     Route::delete('/transaction/{transaction}', 'HomeController@deleteTransaction')->name('home.delete.transaction');
 });
 
-Route::group(['prefix' => 'profile'], function () {
+Route::middleware(['auth', 'verified'])->prefix('profile')->group(function () {
     Route::get('/', 'ProfileController@index')->name('profile');
 
     Route::patch('/{user}/name', 'ProfileController@updateName')->name('profile.update.name');

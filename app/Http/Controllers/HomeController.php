@@ -10,11 +10,6 @@ use App\Http\Requests\TransactionRequest;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth', 'verified']);
-    }
-
     public function index(Request $request)
     {
         $month = empty($request->get('month')) ? date('m') : $request->get('month');
