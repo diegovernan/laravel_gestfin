@@ -3,6 +3,7 @@
 function formattedMoney($value)
 {
     $formattedMoney = number_format($value, 2, ',', '.');
+
     return "R$ " . $formattedMoney;
 }
 
@@ -46,5 +47,6 @@ function translatedMonth($month)
             $translatedMonth = "Dezembro";
             break;
     }
+
     return $translatedMonth;
 }
