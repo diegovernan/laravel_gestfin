@@ -88,7 +88,7 @@ class HomeController extends Controller
 
             return redirect()->back()->with('success', 'Categoria excluída!');
         } catch (\Exception $e) {
-            return redirect()->back()->withErrors('Categoria não pode ser excluída. Apenas categorias sem transações podem ser excluídas.');
+            return redirect()->back()->withErrors('A categoria não pode ser excluída. Apenas categorias sem transações podem ser excluídas.');
         }
     }
 
