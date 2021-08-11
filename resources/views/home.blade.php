@@ -39,7 +39,7 @@
                         <div class="form-group">
                             <select class="form-control" name="year" onchange="location.replace('?month={{ str_pad($month, 2, 0, STR_PAD_LEFT) }}&year='+this.value)">
                                 <option value="none" selected disabled hidden>{{ date('Y') }}</option>
-                                @for ($y = 2015; $y <= 2025; $y++)
+                                @for ($y = 2020; $y <= 2030; $y++)
                                 <option value="{{ ($y == $year) ? old('y') : $y }}" {{ ($y == $year) ? 'selected' : '' }}>{{ $y }}</option>
                                 @endfor
                             </select>

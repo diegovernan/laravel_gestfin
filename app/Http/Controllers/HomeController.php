@@ -36,7 +36,6 @@ class HomeController extends Controller
         $category = new Category;
         $category->user_id = auth()->user()->id;
         $category->name = $request->name;
-
         $category->save();
 
         return redirect()->back()->with('success', 'Categoria adicionada!');
@@ -50,8 +49,7 @@ class HomeController extends Controller
         $transaction->type = $request->type;
         $transaction->date = $request->date;
         $transaction->description = $request->description;
-        $transaction->value = str_replace(",", ".", $request->value);
-
+        $transaction->value = str_replace(',', '.', $request->value);
         $transaction->save();
 
         return redirect()->back()->with('success', 'Transação adicionada!');
@@ -61,7 +59,6 @@ class HomeController extends Controller
     {
         $category->user_id = auth()->user()->id;
         $category->name = $request->name;
-
         $category->save();
 
         return redirect()->back()->with('success', 'Categoria atualizada!');
@@ -74,8 +71,7 @@ class HomeController extends Controller
         $transaction->type = $request->type;
         $transaction->date = $request->date;
         $transaction->description = $request->description;
-        $transaction->value = str_replace(",", ".", $request->value);
-
+        $transaction->value = str_replace(',', '.', $request->value);
         $transaction->save();
 
         return redirect()->back()->with('success', 'Transação atualizada!');
