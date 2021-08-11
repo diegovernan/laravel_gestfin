@@ -2,8 +2,8 @@
 
 return [
 
-    'Login' => 'Entrar',
-    'Register' => 'Registrar-se',
+    'Login' => 'Acesso',
+    'Register' => 'Registro',
     'Logout' => 'Sair',
 
 ];

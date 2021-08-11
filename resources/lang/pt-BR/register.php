@@ -2,10 +2,11 @@
 
 return [
 
-    'Register' => 'Registrar-se',
+    'Register' => 'Registro',
     'Name' => 'Nome',
     'E-Mail Address' => 'E-mail',
     'Password' => 'Senha',
-    'Confirm Password' => 'Confirmar senha',
+    'Confirm Password' => 'Confirmação da senha',
+    'Register Btn' => 'Registrar-se',
 
 ];
