@@ -25,7 +25,7 @@
 
                     <div class="form-group">
                         <label for="inputValue">Valor</label>
-                        <input type="text" class="form-control form-control-sm money" id="inputValue" name="value" value="{{ $transaction->value }}">
+                        <input type="text" class="form-control form-control-sm money" id="inputValue" name="value" value="{{ formattedMoney($transaction->value) }}">
                     </div>
 
                     <div class="form-group">

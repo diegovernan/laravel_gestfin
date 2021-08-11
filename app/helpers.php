@@ -4,47 +4,47 @@ function formattedMoney($value)
 {
     $formattedMoney = number_format($value, 2, ',', '.');
 
-    return "R$ " . $formattedMoney;
+    return 'R$ ' . $formattedMoney;
 }
 
 function translatedMonth($month)
 {
     switch ($month) {
         case '01':
-            $translatedMonth = "Janeiro";
+            $translatedMonth = 'Janeiro';
             break;
         case '02':
-            $translatedMonth = "Fevereiro";
+            $translatedMonth = 'Fevereiro';
             break;
         case '03':
-            $translatedMonth = "Março";
+            $translatedMonth = 'Março';
             break;
         case '04':
-            $translatedMonth = "Abril";
+            $translatedMonth = 'Abril';
             break;
         case '05':
-            $translatedMonth = "Maio";
+            $translatedMonth = 'Maio';
             break;
         case '06':
-            $translatedMonth = "Junho";
+            $translatedMonth = 'Junho';
             break;
         case '07':
-            $translatedMonth = "Julho";
+            $translatedMonth = 'Julho';
             break;
         case '08':
-            $translatedMonth = "Agosto";
+            $translatedMonth = 'Agosto';
             break;
         case '09':
-            $translatedMonth = "Setembro";
+            $translatedMonth = 'Setembro';
             break;
         case '10':
-            $translatedMonth = "Outubro";
+            $translatedMonth = 'Outubro';
             break;
         case '11':
-            $translatedMonth = "Novembro";
+            $translatedMonth = 'Novembro';
             break;
         case '12':
-            $translatedMonth = "Dezembro";
+            $translatedMonth = 'Dezembro';
             break;
     }
 
