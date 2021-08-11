@@ -61,7 +61,7 @@
             <br>
 
             <div class="float-right">
-                <a href="{{ route('home') }}" class="btn btn-light">Voltar</a>
+                <a href="{{ route('home') }}" class="btn btn-secondary">Voltar</a>
             </div>
         </div>
     </div>
