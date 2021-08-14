@@ -1,10 +1,10 @@
 # GestFin - Sistema de gestão financeira (Laravel 6.X)
 
-<!-- ![alt test](screenshots/1.png)
+![alt test](screenshots/1.png)
 
 ![alt test](screenshots/2.png)
 
-![alt test](screenshots/3.png) -->
+![alt test](screenshots/3.png)
 
 
 ## Instalação em localhost
