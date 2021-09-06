@@ -36,7 +36,7 @@ $ php artisan key:generate
 
 Cria banco de dados vazio (MySQL)
 ```bash
-$ mysql -uroot -proot
+$ mysql
 $ create database laravel_gestfin;
 $ quit;
 ```
@@ -47,8 +47,8 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=laravel_gestfin
-DB_USERNAME=root
-DB_PASSWORD=root
+DB_USERNAME=seu usuário aqui
+DB_PASSWORD=sua senha aqui
 ```
 
 Migra tabelas para o banco de dados
